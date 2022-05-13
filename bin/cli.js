@@ -71,5 +71,13 @@ yargs.command({
         console.log(database.numequalto(argv.v));
     }
 })
+.command({
+    command: 'end',
+    describe: 'Exit the program',
+  
+    handler() {
+        database.deleteAll();
+    }
+})
 
 yargs.parse();
