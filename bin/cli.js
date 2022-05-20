@@ -38,7 +38,7 @@ yargs.command({
     },
   
     handler(argv) {
-        console.log(database.get(argv.n))
+       database.get(argv.n);
     }
 })
 .command({
@@ -68,7 +68,31 @@ yargs.command({
     },
   
     handler(argv) {
-        console.log(database.numequalto(argv.v));
+        database.numequalto(argv.v);
+    }
+})
+.command({
+    command: 'begin',
+    describe: 'Begin a transaction block',
+  
+    handler() {
+        database.begin();
+    }
+})
+.command({
+    command: 'rollback',
+    describe: 'Rollbacl last transaction block',
+  
+    handler() {
+        database.rollback();
+    }
+})
+.command({
+    command: 'commit',
+    describe: 'Commit transactions',
+  
+    handler() {
+        database.commit();
     }
 })
 .command({

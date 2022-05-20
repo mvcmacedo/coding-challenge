@@ -35,6 +35,18 @@ friendbuy unset -n <name>
 
 # to find number of variables with a value
 friendbuy numequalto -v <value>
+
+# start a new transaction block
+friendbuy begin
+
+# rollback last transaction block
+friendbuy rollback
+
+# apply changes on all blocks
+friendbuy commit
+
+# end program
+friendbuy end
 ```
 
 ## License
